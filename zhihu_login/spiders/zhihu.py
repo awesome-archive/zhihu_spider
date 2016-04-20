@@ -39,7 +39,7 @@ class ZhihuSpider(scrapy.Spider):
         
         #获取验证码链接
         t = str(int(1000 * time.time()))[0:13]
-        captcha_url = 'http://www.zhihu.com/captcha.gif?r=' + t
+        captcha_url = 'http://www.zhihu.com/captcha.gif?r=' + t + '&type=login'
         #准备下载验证码
         yield scrapy.Request(
             url = captcha_url,
